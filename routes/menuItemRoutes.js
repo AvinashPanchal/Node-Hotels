@@ -32,7 +32,7 @@ router.post('/', async (req, res)=>{
       }
     })
 
-    router.get('/:taste', async (req, res)=> {
+    router.get('/:tasteType', async (req, res)=> {
       try {
         const tasteType = req.params.tasteType; // extract the work type from the url
         if(tasteType=='spice' || tasteType=='sour' || tasteType=='sweet'){
@@ -41,7 +41,7 @@ router.post('/', async (req, res)=>{
           res.status(200).json(response);
 
         }else{
-          res.status(404).json({error: 'Invalid taste Type'});
+          res.status(404).json({error:'Invalid taste Type'});
         }
         
       } catch (error) {
